@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+    <head>
+        <title>TicTacToe Game | Yann Darlet</title>
+        <meta charset="utf-8"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="author" content="Yann Darlet">
+        <meta name="description" content="TicTacToe Game">
+        
+        <!-- Tailwind CSS Framework integration -->
+        <link href="https://unpkg.com/tailwindcss@^1.0/dist/tailwind.min.css" rel="stylesheet">
+
+        <!-- FontAwesome integration -->
+        <script src="https://kit.fontawesome.com/9c8407c0a8.js" crossorigin="anonymous"></script>
+
+        <link rel="stylesheet" href="ticTacToe.css" />
+    </head>
+
+    <body>
+        <header class="flex flex-col items-center text-3xl p-4 text-indigo-600 bg-indigo-100 border-b border-indigo-200">
+            <div>
+                <h1>TicTacToe Game</h1>
+            </div>
+            <div class="flex items-center pt-2">
+                <div class="text-xs mr-2">Timer:</div>
+                <div id="timer" class="text-xl">00:00</div>
+            </div>
+        </header>
+
+        <div id="winnerPannel" class="flex flex-col justify-center items-center absolute invisible">
+            <div class="flex flex-col w-64 h-48 text-center p-6 bg-yellow-200 rounded-lg border border-yellow-500 text-yellow-700 mb-4">
+                <div id="winnerTitle" class="text-xl uppercase">Winner:</div>
+                <div id="theWinnerIs" class="text-2xl mt-3">Player</div>
+                <div id="finalScore" class="text-xl capitalize">0/0</div>
+            </div>
+
+            <div class="flex flex-col text-center mb-40">
+                <div class="">
+                    <button 
+                        id="buttonReload"
+                        class="bg-teal-400 hover:border-teal-500 border border-teal-200 hover:border-teal-900 hover:text-teal-900 text-white font-bold py-3 px-6 rounded"
+                        onClick="location.reload()"
+                    >
+                        New Game
+                    </button>
+                </div>
+            </div>
+        </div>
+                
+        <div id="board" class="flex justify-center items-center">
+            <div id="game" class="m-4 ml-64">
+                <div>
+                    <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold rounded"></button>
+                    <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold rounded"></button>
+                    <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold rounded"></button>
+                </div>
+                <div>
+                    <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold rounded"></button>
+                    <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold rounded"></button>
+                    <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold rounded"></button>
+                </div>
+                <div>
+                    <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold rounded"></button>
+                    <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold rounded"></button>
+                    <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold rounded"></button>
+                </div>
+            </div>
+
+            <div class="flex flex-col items-center bg-teal-100 p-8 text-teal-700 h-64" style="width: 20vw;">
+                <div id="gamesDetails" class="text-lg">
+                    <br />
+                    <br />
+                </div>
+
+                <div id="gameScore" class="mt-8">
+                    <div class="flex items-center">
+                        <i id="arrowPlayer1" class="fas fa-arrow-right mr-2 text-teal-400 visible"></i>
+                        <div class="mr-1">Player 1</div> 
+                        <div class="text-sm mr-2">(X)</div>
+                        <div class="mr-2"> : </div>
+                        <div id="pointsPlayer1">0 Points</div>
+                    </div>
+
+                    <div class="flex items-center mt-1">
+                        <i id="arrowPlayer2" class="fas fa-arrow-right mr-2 text-teal-400 invisible"></i>
+                        <div class="mr-1">Player 2</div> 
+                        <div class="text-sm mr-2">(O)</div>
+                        <div class="mr-2"> : </div>
+                        <div id="pointsPlayer2">0 Points</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <footer class="flex flex-col items-center p-4 text-indigo-600 bg-indigo-100 bottom-0 absolute border-t border-indigo-200">
+            <h4 class="text-xl">Enjoy ^_^ !</h4>
+            <h6 class="text-sm">And thanks DotScreen ! **</h6>
+        </footer>
+
+        <script src="ticTacToe.js"></script>
+    </body>
+
+</html>
